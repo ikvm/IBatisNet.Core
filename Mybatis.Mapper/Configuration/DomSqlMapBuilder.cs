@@ -91,7 +91,7 @@ namespace Mybatis.Mapper.Configuration
         private const string PROVIDERS_NAMESPACE_PREFIX = "provider";
         private const string MAPPING_NAMESPACE_PREFIX = "mapping";
         private const string MODULE_NAMESPACE_PREFIX = "module";
-        private const string DATAMAPPER_XML_NAMESPACE = "http://ibatis.apache.org/dataMapper";
+        private const string DATAMAPPER_XML_NAMESPACE = "http://ibatis.apache.org/mapper";
         private const string PROVIDER_XML_NAMESPACE = "http://ibatis.apache.org/providers";
         private const string MAPPING_XML_NAMESPACE = "http://ibatis.apache.org/mapping";
         private const string MODULE_XML_NAMESPACE = "http://ibatis.apache.org/module";
@@ -100,6 +100,7 @@ namespace Mybatis.Mapper.Configuration
         /// Default filename of main configuration file.
         /// </summary>
         public const string DEFAULT_FILE_CONFIG_NAME = "configuration.config";
+    public const string DEFAULT_MAPPER_NAMESPACE = "Mybatis.Mapper.";
 
         /// <summary>
         /// Default provider name
@@ -612,7 +613,7 @@ namespace Mybatis.Mapper.Configuration
                 if (xsdFile == null)
                 {
                     // TODO: avoid using hard-coded value "IBatisNet.DataMapper"
-                    throw new ConfigurationException( "Unable to locate embedded resource [IBatisNet.DataMapper."+schemaFileName+"]. If you are building from source, verfiy the file is marked as an embedded resource.");
+                    throw new ConfigurationException( "Unable to locate embedded resource [" + DEFAULT_MAPPER_NAMESPACE  + schemaFileName+"]. If you are building from source, verfiy the file is marked as an embedded resource.");
                 }
                 
                 XmlSchema schema = XmlSchema.Read( xsdFile, new ValidationEventHandler(ValidationCallBack) );
@@ -1928,7 +1929,7 @@ namespace Mybatis.Mapper.Configuration
         /// <returns>A resource stream.</returns>
         public Stream GetStream( string schemaResourceKey )
         {
-            return Assembly.GetExecutingAssembly().GetManifestResourceStream("IBatisNet.DataMapper." + schemaResourceKey); 
+            return Assembly.GetExecutingAssembly().GetManifestResourceStream(DEFAULT_MAPPER_NAMESPACE + schemaResourceKey); 
         }
 
 
