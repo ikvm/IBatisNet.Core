@@ -1,4 +1,4 @@
-use [IBatisNet]
+use [zwpttest]
 
 if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[Coupons]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
 BEGIN

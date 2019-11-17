@@ -70,7 +70,7 @@ if exists (select * from master.dbo.syslogins where loginname = N'IBatisNet')
 	exec sp_droplogin N'IBatisNet'
 GO
 
-use [IBatisNet]
+use [zwpttest]
 GO
 
 if not exists (select * from master.dbo.syslogins where loginname = N'IBatisNet')

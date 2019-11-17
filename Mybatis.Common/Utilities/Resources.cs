@@ -32,6 +32,7 @@ using System.IO;
 using System.Reflection;
 using System.Security.Permissions;
 using System.Xml;
+using System.Xml.Linq;
 using Mybatis.Common.Exceptions;
 using Mybatis.Common.Utilities.TypesResolver;
 using Mybatis.Common.Xml;
@@ -347,11 +348,13 @@ namespace Mybatis.Common.Utilities
         public static XmlDocument GetResourceAsXmlDocument(string resource)
         {
             XmlDocument config = new XmlDocument();
+      XDocument xdoc;
 
             try
             {
                 config.Load(Path.Combine(_applicationBase, resource));
-            }
+        xdoc = XDocument.Load(Path.Combine(_applicationBase, resource));
+      }
             catch (Exception e)
             {
                 throw new ConfigurationException(

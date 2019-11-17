@@ -60,12 +60,12 @@ namespace Mybatis.Mapper.Configuration.Serializers
 			_serializerMap.Add("iterate", new IterateSerializer(configScope));		
 		}
 
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="name"></param>
-		/// <returns></returns>
-		public IDeSerializer GetDeSerializer(string name) 
+    /// <summary>
+    /// GetDeSerializer
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
+    public IDeSerializer GetDeSerializer(string name) 
 		{
 			return (IDeSerializer) _serializerMap[name];
 		}

@@ -1,7 +1,7 @@
 -- Technique for creating large sample test data from
 -- http://www.sql-server-performance.com/jc_large_data_operations.asp
 
-use [IBatisNet]
+use [zwpttest]
 
 if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[ManyRecords]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
 drop table [dbo].[ManyRecords]
