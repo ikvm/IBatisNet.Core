@@ -88,7 +88,7 @@ namespace IBatisNet.DataAccess.Extensions.DaoSessionHandlers
 		/// <summary>
 		/// 
 		/// </summary>
-		public override DataSource DataSource
+		public override IDataSource DataSource
 		{
 			get 
 			{ 
@@ -110,17 +110,19 @@ namespace IBatisNet.DataAccess.Extensions.DaoSessionHandlers
 		public override IDbTransaction Transaction
 		{
 			get { return (_session.Transaction as IDbTransaction); }
-		}	
-	
-		#endregion
+		}
 
-		#region Constructor (s) / Destructor
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="daoManager"></param>
-		/// <param name="factory"></param>
-		public NHibernateDaoSession(DaoManager daoManager, ISessionFactory factory):base(daoManager)
+    public override bool IsTransactionStart => throw new NotImplementedException();
+
+    #endregion
+
+    #region Constructor (s) / Destructor
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="daoManager"></param>
+    /// <param name="factory"></param>
+    public NHibernateDaoSession(DaoManager daoManager, ISessionFactory factory):base(daoManager)
 		{			
 			_factory = factory;
 		}
@@ -310,7 +312,7 @@ namespace IBatisNet.DataAccess.Extensions.DaoSessionHandlers
 		/// 
 		/// </summary>
 		/// <returns></returns>
-		public override IDataParameter CreateDataParameter()
+		public override IDbDataParameter CreateDataParameter()
 		{
 			throw new DataAccessException("CreateDataParameter is not supported with Hibernate.");
 		}
@@ -351,7 +353,23 @@ namespace IBatisNet.DataAccess.Extensions.DaoSessionHandlers
 			}
 			_session.Dispose();
 		}
-		#endregion
 
-	}
+    public override void OpenConnection(string connectionString) {
+      throw new NotImplementedException();
+    }
+
+    public override void BeginTransaction(string connectionString) {
+      throw new NotImplementedException();
+    }
+
+    public override void BeginTransaction(string connectionString, IsolationLevel isolationLevel) {
+      throw new NotImplementedException();
+    }
+
+    public override void BeginTransaction(string connectionString, bool openConnection, IsolationLevel isolationLevel) {
+      throw new NotImplementedException();
+    }
+    #endregion
+
+  }
 }

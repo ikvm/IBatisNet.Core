@@ -26,9 +26,7 @@
 #region Using
 
 using System.Collections;
-#if dotnet2
 using System.Collections.Generic;
-#endif
 using System.Data;
 using IBatisNet.DataMapper.Commands;
 using IBatisNet.DataMapper.Configuration.Cache;
@@ -127,7 +125,6 @@ namespace IBatisNet.DataMapper.MappedStatements {
     }
 
     #region ExecuteQueryForMap .NET 2.0
-#if dotnet2
 
     /// <summary>
     /// Executes the SQL and retuns all rows selected in a map that is keyed on the property named
@@ -178,7 +175,6 @@ namespace IBatisNet.DataMapper.MappedStatements {
     public IDictionary<K, V> ExecuteQueryForDictionary<K, V>(ISqlMapSession session, object parameterObject, string keyProperty, string valueProperty, DictionaryRowDelegate<K, V> rowDelegate) {
       return _mappedStatement.ExecuteQueryForDictionary<K, V>(session, parameterObject, keyProperty, valueProperty, rowDelegate);
     }
-#endif
     #endregion
 
     /// <summary>
@@ -255,7 +251,6 @@ namespace IBatisNet.DataMapper.MappedStatements {
     #endregion
 
     #region ExecuteQueryForList .NET 2.0
-#if dotnet2
 
     /// <summary>
     /// Executes the SQL and and fill a strongly typed collection.
@@ -304,7 +299,6 @@ namespace IBatisNet.DataMapper.MappedStatements {
     public IList<T> ExecuteQueryForList<T>(ISqlMapSession session, object parameterObject) {
       return this.ExecuteQueryForList<T>(session, parameterObject, MappedStatement.NO_SKIPPED_RESULTS, MappedStatement.NO_MAXIMUM_RESULTS);
     }
-#endif
     #endregion
 
     #region ExecuteQueryForObject
@@ -351,7 +345,6 @@ namespace IBatisNet.DataMapper.MappedStatements {
 
 
     #region ExecuteQueryForObject .NET 2.0
-#if dotnet2
     /// <summary>
     /// Executes an SQL statement that returns a single row as an Object.
     /// </summary>
@@ -393,7 +386,6 @@ namespace IBatisNet.DataMapper.MappedStatements {
 
       return obj;
     }
-#endif
     #endregion
 
     /// <summary>
@@ -407,7 +399,6 @@ namespace IBatisNet.DataMapper.MappedStatements {
       return _mappedStatement.ExecuteQueryForRowDelegate(session, parameterObject, rowDelegate);
     }
 
-#if dotnet2
     /// <summary>
     /// Runs a query with a custom object that gets a chance 
     /// to deal with each row as it is processed.
@@ -418,7 +409,6 @@ namespace IBatisNet.DataMapper.MappedStatements {
     public IList<T> ExecuteQueryForRowDelegate<T>(ISqlMapSession session, object parameterObject, RowDelegate<T> rowDelegate) {
       return _mappedStatement.ExecuteQueryForRowDelegate<T>(session, parameterObject, rowDelegate);
     }
-#endif
 
     /// <summary>
     /// Runs a query with a custom object that gets a chance 

@@ -1,5 +1,6 @@
 using System;
 using System.Configuration;
+using System.Transactions;
 using IBatisNet.Common.Transaction;
 using IBatisNet.DataAccess.Configuration;
 using IBatisNet.DataAccess.Test.Dao.Interfaces;
@@ -17,7 +18,7 @@ namespace IBatisNet.DataAccess.Test.NUnit.DaoTests
 		/// <summary>
 		/// An other daoManager
 		/// </summary>
-		protected DaoManager daoManager2 = null;
+		protected IDaoManager daoManager2 = null;
 
 		/// <summary>
 		/// Initialisation

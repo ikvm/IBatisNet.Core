@@ -43,14 +43,14 @@ namespace IBatisNet.DataAccess.SessionStore
 		/// <returns></returns>
 		static public ISessionStore GetSessionStore(string daoManagerName)
 		{
-			if (System.Web.HttpContext.Current == null)
-			{
+			//if (System.Web.HttpContext.Current == null)
+			//{
 				return new CallContextSessionStore(daoManagerName);
-			}
-			else
-			{
-				return new WebSessionStore(daoManagerName);
-			}
+			//}
+			//else
+			//{
+			//	return new WebSessionStore(daoManagerName);
+			//}
 		}
 
 	}

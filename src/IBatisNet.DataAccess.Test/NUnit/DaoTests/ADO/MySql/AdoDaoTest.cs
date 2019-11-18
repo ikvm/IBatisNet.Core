@@ -13,7 +13,7 @@ namespace IBatisNet.DataAccess.Test.NUnit.DaoTests.Ado.MySql
 		/// <summary>
 		/// Initialisation
 		/// </summary>
-		[TestFixtureSetUp] 
+		[SetUp] 
 		public void FixtureSetUp() 
 		{
 			DomDaoManagerBuilder builder = new DomDaoManagerBuilder();

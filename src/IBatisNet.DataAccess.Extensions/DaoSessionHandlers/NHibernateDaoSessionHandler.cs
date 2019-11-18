@@ -96,7 +96,7 @@ namespace IBatisNet.DataAccess.Extensions.DaoSessionHandlers
 				{
 					if ((entry.Key.ToString()).StartsWith("class.")) 
 					{
-						config.AddClass( Resources.TypeForName( entry.Value.ToString() ) );
+						config.AddClass(TypeUtils.ResolveType( entry.Value.ToString() ) );
 					}
 					if ((entry.Key.ToString())=="mapping") 
 					{

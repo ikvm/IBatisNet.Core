@@ -161,7 +161,7 @@ namespace IBatisNet.Common.Test.NUnit.CommonTests.Utilities
         /// <summary>
         /// Initialize an sqlMap
         /// </summary>
-        [TestFixtureSetUp]
+        [SetUp]
         protected virtual void SetUpFixture()
         {
             factoryGet = new GetAccessorFactory(true);
@@ -171,7 +171,7 @@ namespace IBatisNet.Common.Test.NUnit.CommonTests.Utilities
         /// <summary>
         /// Dispose the SqlMap
         /// </summary>
-        [TestFixtureTearDown]
+        [TearDown]
         protected virtual void TearDownFixture()
         {
             factoryGet = null;

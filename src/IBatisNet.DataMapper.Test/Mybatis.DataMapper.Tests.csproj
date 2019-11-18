@@ -7,30 +7,24 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
-  
-  <ItemGroup>
-    <None Remove="configuration.xsd" />
-    <None Remove="mapper.xsd" />
-    <None Remove="module.xsd" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="mapper.xsd" />
-    <EmbeddedResource Include="module.xsd" />
-    <EmbeddedResource Include="configuration.xsd" />
-  </ItemGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="Castle.Core" Version="4.4.0" />
+    <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
+    <PackageReference Include="System.Drawing.Common" Version="4.6.0" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <ProjectReference Include="..\IBatisNet.Common\Mybatis.Common.csproj" />
+    <ProjectReference Include="..\IBatisNet.DataMapper\Mybatis.DataMapper.csproj" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0;dotnet4</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0;dotnet2;dotnet4</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE;RELEASE;NETSTANDARD2_0</DefineConstants>
+    <DefineConstants>TRACE;RELEASE;NETSTANDARD2_0;dotnet2</DefineConstants>
   </PropertyGroup>
 </Project>

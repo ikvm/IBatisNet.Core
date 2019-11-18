@@ -171,7 +171,7 @@ namespace IBatisNet.Common.Test.NUnit.CommonTests.Utilities
         /// Test accessor on virtual property
         /// </summary>
         [Test]
-        [ExpectedException(typeof(InvalidOperationException), "Test virtual")]
+        //[ExpectedException(typeof(InvalidOperationException), "Test virtual")]
         public void TestVirtualIMemberAccessor1()
         {
             IGetAccessor accessorGet = factoryGet.CreateGetAccessor(typeof(PropertySon), "Account");
@@ -188,7 +188,7 @@ namespace IBatisNet.Common.Test.NUnit.CommonTests.Utilities
         /// Test accessor on virtual property
         /// </summary>
         [Test]
-        [ExpectedException(typeof(InvalidOperationException), "Test virtual")]
+        //[ExpectedException(typeof(InvalidOperationException), "Test virtual")]
         public void TestVirtualIMemberAccessor2()
         {
             IGetAccessor accessorGet = factoryGet.CreateGetAccessor(typeof(PropertySon), "Int");
@@ -205,7 +205,7 @@ namespace IBatisNet.Common.Test.NUnit.CommonTests.Utilities
         /// Test IMemberAccessor on virtual property
         /// </summary>
         [Test]
-        [ExpectedException(typeof(InvalidOperationException), "Test virtual")]
+        //[ExpectedException(typeof(InvalidOperationException), "Test virtual")]
         public void TestVirtualIMemberAccessor3()
         {
             IGetAccessor accessorGet = factoryGet.CreateGetAccessor(typeof(PropertySon), "DateTime");

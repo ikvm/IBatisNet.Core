@@ -1,6 +1,7 @@
 using System;
 using System.Xml;
 using System.Collections.Specialized;
+using System.Xml.Linq;
 
 namespace IBatisNet.Common.Xml
 {

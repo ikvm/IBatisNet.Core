@@ -26,9 +26,7 @@
 using System;
 using System.Collections;
 using System.Collections.Specialized;
-#if dotnet2
 using System.Collections.Generic;
-#endif
 using IBatisNet.DataMapper.Exceptions;
 
 namespace IBatisNet.DataMapper.Proxy
@@ -46,9 +44,7 @@ namespace IBatisNet.DataMapper.Proxy
         public LazyFactoryBuilder()
         {
             _factory[typeof(IList)] = new LazyListFactory();
-#if dotnet2
             _factory[typeof(IList<>)] = new LazyListGenericFactory();
-#endif
         }
 
         
@@ -72,13 +68,11 @@ namespace IBatisNet.DataMapper.Proxy
         {
             if (type.IsInterface)
             {
-#if dotnet2
                 if (type.IsGenericType && (type.GetGenericTypeDefinition() == typeof(IList<>)) )
                 {
                     return _factory[ type.GetGenericTypeDefinition() ] as ILazyFactory;
                 }
                 else 
-#endif				
 				if (type == typeof(IList))
                 {
                     return _factory[type] as ILazyFactory;

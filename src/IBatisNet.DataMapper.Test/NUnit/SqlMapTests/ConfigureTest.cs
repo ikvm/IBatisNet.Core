@@ -38,17 +38,17 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests
         }
 		#endregion 
 	    
-	    /// <summary>
-        /// Test HybridWebThreadSessionStore
-        /// </summary>
-        [Test]
-        public void HybridWebThreadSessionStoreTest()
-	    {
-            sqlMap.SessionStore = new HybridWebThreadSessionStore(sqlMap.Id);
+	    ///// <summary>
+     //   /// Test HybridWebThreadSessionStore
+     //   /// </summary>
+     //   [Test]
+     //   public void HybridWebThreadSessionStoreTest()
+	    //{
+     //       sqlMap.SessionStore = new HybridWebThreadSessionStore(sqlMap.Id);
 	        
-            Account account = sqlMap.QueryForObject("SelectWithProperty", null) as Account;
-            AssertAccount1(account);
-	    }
+     //       Account account = sqlMap.QueryForObject("SelectWithProperty", null) as Account;
+     //       AssertAccount1(account);
+	    //}
 	    
 
 		#region Relatives Path tests

@@ -36,12 +36,13 @@ using IBatisNet.DataAccess.Interfaces;
 
 #endregion
 
+//[assembly: CLSCompliant(true)]
 namespace IBatisNet.DataAccess.Configuration
 {
 	/// <summary>
 	/// Summary description for DaoProxy.
 	/// </summary>
-	[CLSCompliant(false)]
+	//[CLSCompliant(false)]
 	public class DaoProxy : IInterceptor	
 	{
 		#region Fields

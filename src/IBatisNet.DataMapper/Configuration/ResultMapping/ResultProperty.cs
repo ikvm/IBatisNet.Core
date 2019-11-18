@@ -28,9 +28,7 @@
 
 using System;
 using System.Collections;
-#if dotnet2
 using System.Collections.Generic;
-#endif
 using System.Data;
 using System.Globalization;
 using System.Reflection;
@@ -399,13 +397,10 @@ namespace IBatisNet.DataMapper.Configuration.ResultMapping
                     _setAccessor = configScope.DataExchangeFactory.AccessorFactory.SetAccessorFactory.CreateSetAccessor(propertyInfo.ReflectedType, memberName);
 				}
 
-#if dotnet2
                 _isGenericIList = TypeUtils.IsImplementGenericIListInterface(MemberType);
-#endif			    
                 _isIList = typeof(IList).IsAssignableFrom(MemberType);
 			    
 			    // set the list factory
-#if dotnet2			   
 			    if (_isGenericIList)
 			    {
 			        if (MemberType.IsArray)
@@ -443,7 +438,6 @@ namespace IBatisNet.DataMapper.Configuration.ResultMapping
 			        }
 			    }
 			    else 
-#endif			        
                     if (_isIList)
 			    {
                     if (MemberType.IsArray)

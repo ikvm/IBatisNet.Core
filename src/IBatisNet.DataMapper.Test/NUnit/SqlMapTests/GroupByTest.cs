@@ -22,7 +22,7 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests
         /// <summary>
         /// SetUp
         /// </summary>
-        [TestFixtureSetUp]
+        [SetUp]
         protected override void SetUpFixture()
         {
             base.SetUpFixture();
@@ -38,7 +38,7 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests
         /// <summary>
         /// Dispose the SqlMap
         /// </summary>
-        [TestFixtureTearDown]
+        [TearDown]
         protected override void TearDownFixture()
         {
             InitScript(sqlMap.DataSource, ScriptDirectory + "petstore-drop.sql");

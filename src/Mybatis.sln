@@ -3,9 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mybatis.Common", "IBatisNet.Common\Mybatis.Common.csproj", "{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mybatis.Common", "IBatisNet.Common\Mybatis.Common.csproj", "{BBC8DA4A-EA88-41D9-8B93-929B8F3ADADE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mybatis.DataMapper", "IBatisNet.DataMapper\Mybatis.DataMapper.csproj", "{F3E45F39-3224-4EAD-B138-EB5CC0E32824}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mybatis.DataMapper", "IBatisNet.DataMapper\Mybatis.DataMapper.csproj", "{F3E45F39-3224-4EAD-B138-EB5CC0E32824}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MybatisCommon.Tests", "IBatisNet.Common.Test\MybatisCommon.Tests.csproj", "{5961F3DE-CB5E-40FE-AE89-D00D6E453907}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mybatis.DataAccess", "IBatisNet.DataAccess\Mybatis.DataAccess.csproj", "{BEFC4A45-7DF9-40E4-942C-82DC1BA5E708}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mybatis.DataAccess.Tests", "IBatisNet.DataAccess.Test\Mybatis.DataAccess.Tests.csproj", "{888FE332-F7B7-4248-AEE1-73E14EB9C042}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mybatis.DataMapper.Tests", "IBatisNet.DataMapper.Test\Mybatis.DataMapper.Tests.csproj", "{998B79D9-800F-493F-A263-306F06906E2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mybatis.DataAccess.Extensions", "IBatisNet.DataAccess.Extensions\Mybatis.DataAccess.Extensions.csproj", "{342C92B4-2742-4C55-9374-A504FE3B6972}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +31,26 @@ Global
 		{F3E45F39-3224-4EAD-B138-EB5CC0E32824}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3E45F39-3224-4EAD-B138-EB5CC0E32824}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3E45F39-3224-4EAD-B138-EB5CC0E32824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5961F3DE-CB5E-40FE-AE89-D00D6E453907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5961F3DE-CB5E-40FE-AE89-D00D6E453907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5961F3DE-CB5E-40FE-AE89-D00D6E453907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5961F3DE-CB5E-40FE-AE89-D00D6E453907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEFC4A45-7DF9-40E4-942C-82DC1BA5E708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEFC4A45-7DF9-40E4-942C-82DC1BA5E708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEFC4A45-7DF9-40E4-942C-82DC1BA5E708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEFC4A45-7DF9-40E4-942C-82DC1BA5E708}.Release|Any CPU.Build.0 = Release|Any CPU
+		{888FE332-F7B7-4248-AEE1-73E14EB9C042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{888FE332-F7B7-4248-AEE1-73E14EB9C042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{888FE332-F7B7-4248-AEE1-73E14EB9C042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{888FE332-F7B7-4248-AEE1-73E14EB9C042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{998B79D9-800F-493F-A263-306F06906E2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{998B79D9-800F-493F-A263-306F06906E2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{998B79D9-800F-493F-A263-306F06906E2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{998B79D9-800F-493F-A263-306F06906E2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{342C92B4-2742-4C55-9374-A504FE3B6972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{342C92B4-2742-4C55-9374-A504FE3B6972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{342C92B4-2742-4C55-9374-A504FE3B6972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{342C92B4-2742-4C55-9374-A504FE3B6972}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

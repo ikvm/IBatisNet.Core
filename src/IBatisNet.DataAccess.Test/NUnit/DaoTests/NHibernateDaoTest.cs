@@ -21,7 +21,7 @@ namespace IBatisNet.DataAccess.Test.NUnit.DaoTests
 		/// <summary>
 		/// A daoManager
 		/// </summary>
-		private static DaoManager _daoManager = null;
+		private static IDaoManager _daoManager = null;
 
 		/// <summary>
 		/// Initialisation
@@ -47,7 +47,7 @@ namespace IBatisNet.DataAccess.Test.NUnit.DaoTests
 		/// </summary>
 		/// <param name="datasource">The datasource.</param>
 		/// <param name="script">The sql batch</param>
-		protected static void InitScript(DataSource datasource, string script)
+		protected static void InitScript(IDataSource datasource, string script)
 		{
 			ScriptRunner runner = new ScriptRunner();
 

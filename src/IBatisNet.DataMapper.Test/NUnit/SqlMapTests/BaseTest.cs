@@ -60,7 +60,7 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests
         /// <summary>
         /// Initialize an sqlMap
         /// </summary>
-        [TestFixtureSetUp]
+        [SetUp]
         protected virtual void SetUpFixture()
         {
             //DateTime start = DateTime.Now;
@@ -118,7 +118,7 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests
         /// <summary>
         /// Dispose the SqlMap
         /// </summary>
-        [TestFixtureTearDown]
+        [TearDown]
         protected virtual void TearDownFixture()
         {
             sqlMap = null;

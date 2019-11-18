@@ -32,9 +32,7 @@
 
 using System;
 
-#if dotnet2
 using System.Collections.Generic;
-#endif
 using System.Reflection;
 
 using System.IO;
@@ -76,20 +74,16 @@ namespace IBatisNet.Common.Utilities.TypesResolver
         /// </exception>
         public virtual Type Resolve(string typeName)
         {
-#if dotnet2
             Type type = ResolveGenericType(typeName.Replace(" ", string.Empty));
             if (type == null)
             {
                 type = ResolveType(typeName.Replace(" ", string.Empty));
             }
             return type;
-#else
-            return ResolveType(typeName.Replace(" ", string.Empty));
-#endif
+
         }
         #endregion
 
-#if dotnet2
         /// <summary>
         /// Resolves the supplied generic <paramref name="typeName"/>,
         /// substituting recursively all its type parameters., 
@@ -150,7 +144,6 @@ namespace IBatisNet.Common.Utilities.TypesResolver
                 return type;
             }
         }
-#endif
 
         /// <summary>
         /// Resolves the supplied <paramref name="typeName"/> to a
@@ -229,11 +222,7 @@ namespace IBatisNet.Common.Utilities.TypesResolver
             // assembly qualified... load the assembly, then the Type
             Assembly assembly = null;
 
-#if dotnet2
             assembly = Assembly.Load(typeInfo.AssemblyName);
-#else
-            assembly = Assembly.LoadWithPartialName (typeInfo.AssemblyName);
-#endif
 
             if (assembly != null)
             {
@@ -278,7 +267,6 @@ namespace IBatisNet.Common.Utilities.TypesResolver
             return new TypeLoadException("Could not load type from string value '" + typeName + "'.", ex);
         }
 
-#if dotnet2
         #region Inner Class : GenericArgumentsInfo
 
         /// <summary>
@@ -488,7 +476,6 @@ namespace IBatisNet.Common.Utilities.TypesResolver
         }
 
         #endregion
-#endif
 
         #region Inner Class : TypeAssemblyInfo
 

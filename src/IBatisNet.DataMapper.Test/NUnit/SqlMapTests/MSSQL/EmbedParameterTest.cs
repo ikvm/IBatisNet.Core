@@ -31,7 +31,7 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
 		[SetUp] 
 		public void Init() 
 		{
-			InitSqlMap();
+			//InitSqlMap();
 			//InitScript( sqlMap.DataSource, ScriptDirectory + "embed-param-test-init.sql", false );
 		}
 
@@ -230,8 +230,8 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests.MSSQL
 				using (SqlCommand command = new SqlCommand(commandText, connection))
 				{
 					command.CommandType = CommandType.Text;
-					command.Parameters.Add ( "@date1", new DateTime(1990,1,1)) ;
-					command.Parameters.Add ( "@date2", new DateTime(1992,1,1)) ;
+					command.Parameters.Add ( new SqlParameter( "@date1", new DateTime(1990,1,1))) ;
+					command.Parameters.Add (new SqlParameter("@date2", new DateTime(1992,1,1))) ;
 
 					long startCount = DateTime.Now.Ticks;
 					for(int i= 0; i<50; i++)
