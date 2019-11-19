@@ -1,893 +1,669 @@
-﻿namespace Mybatis.Configuration
+﻿using System.Xml;
+
+namespace Mybatis.Configuration
 {
   /// <remarks/>
-  public partial class configuration
+  public partial class configuration : XSchema
   {
-
-    private properties propertiesField;
-
-    private setting[] settingsField;
-
-    private typeAliases typeAliasesField;
-
-    private typeHandlers typeHandlersField;
-
-    private objectFactory objectFactoryField;
-
-    private objectWrapperFactory objectWrapperFactoryField;
-
-    private reflectorFactory reflectorFactoryField;
-
-    private plugin[] pluginsField;
-
-    private environments environmentsField;
-
-    private databaseIdProvider databaseIdProviderField;
-
-    private mappers mappersField;
-
-    /// <remarks/>
-    public properties properties
+    public configuration()
     {
-      get
+    }
+
+    public configuration(XmlReader reader) : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "configuration"; }
+    }
+    /// <summary>
+    /// 遍历当前XML节点
+    /// </summary>
+    /// <param name="xnav">XPathNavigator对象</param>
+    protected override void ParseChild(XmlReader xnav)
+    {
+      if (null == xnav) return;
+      switch (xnav.Name)
       {
-        return this.propertiesField;
-      }
-      set
-      {
-        this.propertiesField = value;
+        case "properties":
+        {
+          break;
+        }
+        case "settings":
+        {
+          ParseChilds(xnav, "settings", "setting", settings);
+          break;
+        }
+        case "typeAliases":
+        {
+          ParseChilds(xnav, "typeAliases", "typeAlias", typeAliases.typeAlias);
+          break;
+        }
       }
     }
 
-    /// <remarks/>
-    public setting[] settings
-    {
-      get
-      {
-        return this.settingsField;
-      }
-      set
-      {
-        this.settingsField = value;
-      }
-    }
 
     /// <remarks/>
-    public typeAliases typeAliases
-    {
-      get
-      {
-        return this.typeAliasesField;
-      }
-      set
-      {
-        this.typeAliasesField = value;
-      }
-    }
+    public properties properties { get; set; }
 
     /// <remarks/>
-    public typeHandlers typeHandlers
-    {
-      get
-      {
-        return this.typeHandlersField;
-      }
-      set
-      {
-        this.typeHandlersField = value;
-      }
-    }
+    public setting[] settings { get; set; }
 
     /// <remarks/>
-    public objectFactory objectFactory
-    {
-      get
-      {
-        return this.objectFactoryField;
-      }
-      set
-      {
-        this.objectFactoryField = value;
-      }
-    }
+    public typeAliases typeAliases { get; set; }
 
     /// <remarks/>
-    public objectWrapperFactory objectWrapperFactory
-    {
-      get
-      {
-        return this.objectWrapperFactoryField;
-      }
-      set
-      {
-        this.objectWrapperFactoryField = value;
-      }
-    }
+    public typeHandlers typeHandlers { get; set; }
 
     /// <remarks/>
-    public reflectorFactory reflectorFactory
-    {
-      get
-      {
-        return this.reflectorFactoryField;
-      }
-      set
-      {
-        this.reflectorFactoryField = value;
-      }
-    }
+    public objectFactory objectFactory { get; set; }
 
     /// <remarks/>
-    public plugin[] plugins
-    {
-      get
-      {
-        return this.pluginsField;
-      }
-      set
-      {
-        this.pluginsField = value;
-      }
-    }
+    public objectWrapperFactory objectWrapperFactory { get; set; }
 
     /// <remarks/>
-    public environments environments
-    {
-      get
-      {
-        return this.environmentsField;
-      }
-      set
-      {
-        this.environmentsField = value;
-      }
-    }
+    public reflectorFactory reflectorFactory { get; set; }
 
     /// <remarks/>
-    public databaseIdProvider databaseIdProvider
-    {
-      get
-      {
-        return this.databaseIdProviderField;
-      }
-      set
-      {
-        this.databaseIdProviderField = value;
-      }
-    }
+    public plugin[] plugins { get; set; }
 
     /// <remarks/>
-    public mappers mappers
-    {
-      get
-      {
-        return this.mappersField;
-      }
-      set
-      {
-        this.mappersField = value;
-      }
-    }
+    public environments environments { get; set; }
+
+    /// <remarks/>
+    public databaseIdProvider databaseIdProvider { get; set; }
+
+    /// <remarks/>
+    public mappers mappers { get; set; }
   }
 
   /// <remarks/>
-  public partial class properties
+  public partial class properties : XSchema
   {
-
-    private property[] propertyField;
-
-    private string resourceField;
-
-    private string urlField;
-
-    /// <remarks/>
-    public property[] property
+    public properties()
     {
-      get
-      {
-        return this.propertyField;
-      }
-      set
-      {
-        this.propertyField = value;
-      }
+    }
+
+    public properties(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "properties"; }
     }
 
     /// <remarks/>
-    public string resource
-    {
-      get
-      {
-        return this.resourceField;
-      }
-      set
-      {
-        this.resourceField = value;
-      }
-    }
+    public property[] property { get; set; }
 
     /// <remarks/>
-    public string url
-    {
-      get
-      {
-        return this.urlField;
-      }
-      set
-      {
-        this.urlField = value;
-      }
-    }
+    public string resource { get; set; }
+
+    /// <remarks/>
+    public string url { get; set; }
   }
 
   /// <remarks/>
-  public partial class property
+  public partial class property : XSchema
   {
-
-    private string nameField;
-
-    private string valueField;
-
-    /// <remarks/>
-    public string name
+    public property()
     {
-      get
-      {
-        return this.nameField;
-      }
-      set
-      {
-        this.nameField = value;
-      }
+    }
+
+    public property(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "property"; }
     }
 
     /// <remarks/>
-    public string value
-    {
-      get
-      {
-        return this.valueField;
-      }
-      set
-      {
-        this.valueField = value;
-      }
-    }
+    public string name { get; set; }
+
+    /// <remarks/>
+    public string value { get; set; }
   }
 
   /// <remarks/>
-  public partial class setting
+  public partial class setting : XSchema
   {
-
-    private string nameField;
-
-    private string valueField;
-
-    /// <remarks/>
-    public string name
+    public setting()
     {
-      get
-      {
-        return this.nameField;
-      }
-      set
-      {
-        this.nameField = value;
-      }
+    }
+
+    public setting(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "setting"; }
     }
 
     /// <remarks/>
-    public string value
-    {
-      get
-      {
-        return this.valueField;
-      }
-      set
-      {
-        this.valueField = value;
-      }
-    }
+    public string name { get; set; }
+
+    /// <remarks/>
+    public string value { get; set; }
   }
 
   /// <remarks/>
-  public partial class typeAliases
+  public partial class typeAliases : XSchema
   {
-
-    private typeAlias[] typeAliasField;
-
-    private package[] packageField;
-
-    /// <remarks/>
-    public typeAlias[] typeAlias
+    public typeAliases()
     {
-      get
-      {
-        return this.typeAliasField;
-      }
-      set
-      {
-        this.typeAliasField = value;
-      }
+    }
+
+    public typeAliases(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "typeAliases"; }
     }
 
     /// <remarks/>
-    public package[] package
-    {
-      get
-      {
-        return this.packageField;
-      }
-      set
-      {
-        this.packageField = value;
-      }
-    }
+    public typeAlias[] typeAlias { get; set; }
+
+    /// <remarks/>
+    public package[] package { get; set; }
   }
 
   /// <remarks/>
-  public partial class typeAlias
+  public partial class typeAlias : XSchema
   {
-
-    private string typeField;
-
-    private string aliasField;
-
-    /// <remarks/>
-    public string type
+    public typeAlias()
     {
-      get
-      {
-        return this.typeField;
-      }
-      set
-      {
-        this.typeField = value;
-      }
+    }
+
+    public typeAlias(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "typeAlias"; }
     }
 
     /// <remarks/>
-    public string alias
-    {
-      get
-      {
-        return this.aliasField;
-      }
-      set
-      {
-        this.aliasField = value;
-      }
-    }
+    public string type { get; set; }
+
+    /// <remarks/>
+    public string alias { get; set; }
   }
 
   /// <remarks/>
-  public partial class package
+  public partial class package : XSchema
   {
+    public package()
+    {
+    }
 
-    private string nameField;
+    public package(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "package"; }
+    }
 
     /// <remarks/>
-    public string name
-    {
-      get
-      {
-        return this.nameField;
-      }
-      set
-      {
-        this.nameField = value;
-      }
-    }
+    public string name { get; set; }
   }
 
   /// <remarks/>
-  public partial class typeHandlers
+  public partial class typeHandlers : XSchema
   {
-
-    private typeHandler[] typeHandlerField;
-
-    private package[] packageField;
-
-    /// <remarks/>
-    public typeHandler[] typeHandler
+    public typeHandlers()
     {
-      get
-      {
-        return this.typeHandlerField;
-      }
-      set
-      {
-        this.typeHandlerField = value;
-      }
+    }
+
+    public typeHandlers(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "typeHandlers"; }
     }
 
     /// <remarks/>
-    public package[] package
-    {
-      get
-      {
-        return this.packageField;
-      }
-      set
-      {
-        this.packageField = value;
-      }
-    }
+    public typeHandler[] typeHandler { get; set; }
+
+    /// <remarks/>
+    public package[] package { get; set; }
   }
 
   /// <remarks/>
-  public partial class typeHandler
+  public partial class typeHandler : XSchema
   {
-
-    private string javaTypeField;
-
-    private string jdbcTypeField;
-
-    private string handlerField;
-
-    /// <remarks/>
-    public string javaType
+    public typeHandler()
     {
-      get
-      {
-        return this.javaTypeField;
-      }
-      set
-      {
-        this.javaTypeField = value;
-      }
+    }
+
+    public typeHandler(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "typeHandler"; }
     }
 
     /// <remarks/>
-    public string jdbcType
-    {
-      get
-      {
-        return this.jdbcTypeField;
-      }
-      set
-      {
-        this.jdbcTypeField = value;
-      }
-    }
+    public string javaType { get; set; }
 
     /// <remarks/>
-    public string handler
-    {
-      get
-      {
-        return this.handlerField;
-      }
-      set
-      {
-        this.handlerField = value;
-      }
-    }
+    public string jdbcType { get; set; }
+
+    /// <remarks/>
+    public string handler { get; set; }
   }
 
   /// <remarks/>
-  public partial class objectFactory
+  public partial class objectFactory : XSchema
   {
-
-    private property[] propertyField;
-
-    private string typeField;
-
-    /// <remarks/>
-    public property[] property
+    public objectFactory()
     {
-      get
-      {
-        return this.propertyField;
-      }
-      set
-      {
-        this.propertyField = value;
-      }
+    }
+
+    public objectFactory(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "objectFactory"; }
     }
 
     /// <remarks/>
-    public string type
-    {
-      get
-      {
-        return this.typeField;
-      }
-      set
-      {
-        this.typeField = value;
-      }
-    }
+    public property[] property { get; set; }
+
+    /// <remarks/>
+    public string type { get; set; }
   }
 
   /// <remarks/>
-  public partial class objectWrapperFactory
+  public partial class objectWrapperFactory : XSchema
   {
+    public objectWrapperFactory()
+    {
+    }
 
-    private string typeField;
+    public objectWrapperFactory(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "objectWrapperFactory"; }
+    }
 
     /// <remarks/>
-    public string type
-    {
-      get
-      {
-        return this.typeField;
-      }
-      set
-      {
-        this.typeField = value;
-      }
-    }
+    public string type { get; set; }
   }
 
   /// <remarks/>
-  public partial class reflectorFactory
+  public partial class reflectorFactory : XSchema
   {
+    public reflectorFactory()
+    {
+    }
 
-    private string typeField;
+    public reflectorFactory(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "reflectorFactory"; }
+    }
 
     /// <remarks/>
-    public string type
-    {
-      get
-      {
-        return this.typeField;
-      }
-      set
-      {
-        this.typeField = value;
-      }
-    }
+    public string type { get; set; }
   }
 
   /// <remarks/>
-  public partial class plugin
+  public partial class plugin : XSchema
   {
-
-    private property[] propertyField;
-
-    private string interceptorField;
-
-    /// <remarks/>
-    public property[] property
+    public plugin()
     {
-      get
-      {
-        return this.propertyField;
-      }
-      set
-      {
-        this.propertyField = value;
-      }
+    }
+
+    public plugin(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "plugin"; }
     }
 
     /// <remarks/>
-    public string interceptor
-    {
-      get
-      {
-        return this.interceptorField;
-      }
-      set
-      {
-        this.interceptorField = value;
-      }
-    }
+    public property[] property { get; set; }
+
+    /// <remarks/>
+    public string interceptor { get; set; }
   }
 
   /// <remarks/>
-  public partial class environments
+  public partial class environments : XSchema
   {
-
-    private environment[] environmentField;
-
-    private string defaultField;
-
-    /// <remarks/>
-    public environment[] environment
+    public environments()
     {
-      get
-      {
-        return this.environmentField;
-      }
-      set
-      {
-        this.environmentField = value;
-      }
+    }
+
+    public environments(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "environments"; }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string @default
-    {
-      get
-      {
-        return this.defaultField;
-      }
-      set
-      {
-        this.defaultField = value;
-      }
-    }
+    public environment[] environment { get; set; }
+
+    /// <remarks/>
+    public string @default { get; set; }
   }
 
   /// <remarks/>
-  public partial class environment
+  public partial class environment : XSchema
   {
-
-    private transactionManager transactionManagerField;
-
-    private dataSource dataSourceField;
-
-    private string idField;
-
-    /// <remarks/>
-    public transactionManager transactionManager
+    public environment()
     {
-      get
-      {
-        return this.transactionManagerField;
-      }
-      set
-      {
-        this.transactionManagerField = value;
-      }
+    }
+
+    public environment(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "environment"; }
     }
 
     /// <remarks/>
-    public dataSource dataSource
-    {
-      get
-      {
-        return this.dataSourceField;
-      }
-      set
-      {
-        this.dataSourceField = value;
-      }
-    }
+    public transactionManager transactionManager { get; set; }
 
     /// <remarks/>
-    public string id
-    {
-      get
-      {
-        return this.idField;
-      }
-      set
-      {
-        this.idField = value;
-      }
-    }
+    public dataSource dataSource { get; set; }
+
+    /// <remarks/>
+    public string id { get; set; }
   }
 
   /// <remarks/>
-  public partial class transactionManager
+  public partial class transactionManager : XSchema
   {
-
-    private property[] propertyField;
-
-    private string typeField;
-
-    /// <remarks/>
-    public property[] property
+    public transactionManager()
     {
-      get
-      {
-        return this.propertyField;
-      }
-      set
-      {
-        this.propertyField = value;
-      }
+    }
+
+    public transactionManager(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "transactionManager"; }
     }
 
     /// <remarks/>
-    public string type
-    {
-      get
-      {
-        return this.typeField;
-      }
-      set
-      {
-        this.typeField = value;
-      }
-    }
+    public property[] property { get; set; }
+
+    /// <remarks/>
+    public string type { get; set; }
   }
 
   /// <remarks/>
-  public partial class dataSource
+  public partial class dataSource : XSchema
   {
-
-    private property[] propertyField;
-
-    private string typeField;
-
-    /// <remarks/>
-    public property[] property
+    public dataSource()
     {
-      get
-      {
-        return this.propertyField;
-      }
-      set
-      {
-        this.propertyField = value;
-      }
+    }
+
+    public dataSource(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "dataSource"; }
     }
 
     /// <remarks/>
-    public string type
-    {
-      get
-      {
-        return this.typeField;
-      }
-      set
-      {
-        this.typeField = value;
-      }
-    }
+    public property[] property { get; set; }
+
+    /// <remarks/>
+    public string type { get; set; }
   }
 
   /// <remarks/>
-  public partial class databaseIdProvider
+  public partial class databaseIdProvider : XSchema
   {
-
-    private property[] propertyField;
-
-    private string typeField;
-
-    /// <remarks/>
-    public property[] property
+    public databaseIdProvider()
     {
-      get
-      {
-        return this.propertyField;
-      }
-      set
-      {
-        this.propertyField = value;
-      }
+    }
+
+    public databaseIdProvider(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "databaseIdProvider"; }
     }
 
     /// <remarks/>
-    public string type
-    {
-      get
-      {
-        return this.typeField;
-      }
-      set
-      {
-        this.typeField = value;
-      }
-    }
+    public property[] property { get; set; }
+
+    /// <remarks/>
+    public string type { get; set; }
   }
 
   /// <remarks/>
-  public partial class mappers
+  public partial class mappers : XSchema
   {
-
-    private mapper[] mapperField;
-
-    private package[] packageField;
-
-    /// <remarks/>
-    public mapper[] mapper
+    public mappers()
     {
-      get
-      {
-        return this.mapperField;
-      }
-      set
-      {
-        this.mapperField = value;
-      }
+    }
+
+    public mappers(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "mappers"; }
     }
 
     /// <remarks/>
-    public package[] package
-    {
-      get
-      {
-        return this.packageField;
-      }
-      set
-      {
-        this.packageField = value;
-      }
-    }
+    public mapper[] mapper { get; set; }
+
+    /// <remarks/>
+    public package[] package { get; set; }
   }
 
   /// <remarks/>
-  public partial class mapper
+  public partial class mapper : XSchema
   {
-
-    private string resourceField;
-
-    private string urlField;
-
-    private string classField;
-
-    /// <remarks/>
-    public string resource
+    public mapper()
     {
-      get
-      {
-        return this.resourceField;
-      }
-      set
-      {
-        this.resourceField = value;
-      }
+    }
+
+    public mapper(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "mapper"; }
     }
 
     /// <remarks/>
-    public string url
-    {
-      get
-      {
-        return this.urlField;
-      }
-      set
-      {
-        this.urlField = value;
-      }
-    }
+    public string resource { get; set; }
 
     /// <remarks/>
-    public string @class
-    {
-      get
-      {
-        return this.classField;
-      }
-      set
-      {
-        this.classField = value;
-      }
-    }
+    public string url { get; set; }
+
+    /// <remarks/>
+    public string @class { get; set; }
   }
 
   /// <remarks/>
-  public partial class settings
+  public partial class settings : XSchema
   {
+    public settings()
+    {
+    }
 
-    private setting[] settingField;
+    public settings(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "settings"; }
+    }
 
     /// <remarks/>
-    public setting[] setting
-    {
-      get
-      {
-        return this.settingField;
-      }
-      set
-      {
-        this.settingField = value;
-      }
-    }
+    public setting[] setting { get; set; }
   }
 
   /// <remarks/>
-  public partial class plugins
+  public partial class plugins : XSchema
   {
+    public plugins()
+    {
+    }
 
-    private plugin[] pluginField;
+    public plugins(XmlReader reader)
+      : base(reader)
+    {
+    }
+
+    /// <summary>
+    /// 获取节点名称
+    /// </summary>
+    /// <value>节点名称</value>
+    protected override string NodeName
+    {
+      get { return "plugins"; }
+    }
 
     /// <remarks/>
-    public plugin[] plugin
-    {
-      get
-      {
-        return this.pluginField;
-      }
-      set
-      {
-        this.pluginField = value;
-      }
-    }
+    public plugin[] plugin { get; set; }
   }
 }
