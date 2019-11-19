@@ -29,6 +29,7 @@
 using System;
 using System.Collections;
 using System.Collections.Specialized;
+using System.Configuration;
 using System.Xml;
 using IBatisNet.Common;
 using IBatisNet.Common.Exceptions;
@@ -111,13 +112,13 @@ namespace IBatisNet.DataAccess.DaoSessionHandlers
 				}
 				else
 				{
-					throw new ConfigurationException("Invalid attribute on daoSessionHandler/property ");
+					throw new ConfigurationErrorsException("Invalid attribute on daoSessionHandler/property ");
 				}
 				_sqlMap = builder.Build( document, dataSource, useConfigFileWatcher, properties);
 			}
 			catch(Exception e)
 			{
-				throw new ConfigurationException(string.Format("DaoManager could not configure SqlMapDaoSessionHandler.Cause: {0}", e.Message),e);
+				throw new ConfigurationErrorsException(string.Format("DaoManager could not configure SqlMapDaoSessionHandler.Cause: {0}", e.Message),e);
 			}
 		}
 

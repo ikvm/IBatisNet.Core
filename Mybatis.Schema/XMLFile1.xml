@@ -1,0 +1,56 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="osmconvert 0.8.5">
+  <bounds minlat="-41.98399" minlon="-73.89404" maxlat="-32.84267" maxlon="-70.92773"/>
+  <node id="13698430" lat="-34.2911861" lon="-71.3101819" version="2" timestamp="2010-11-27T14:02:18Z" changeset="6470051" uid="337684" user="felipeedwards"/>
+  <node id="13698430" lat="-34.2911941" lon="-71.3101193" version="3" timestamp="2010-12-13T00:22:55Z" changeset="6643617" uid="337684" user="felipeedwards"/>
+  <node id="50026147" lat="-33.0228196" lon="-71.5509851" version="3" timestamp="2008-03-16T03:48:24Z" changeset="330702" uid="30854" user="Zambelli Limitada">
+    <tag k="name" v="Viña del Mar"/>
+    <tag k="is_in" v="Chile, Latin America"/>
+    <tag k="place" v="city"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+  </node>
+  <node id="50026147" lat="-33.0244675" lon="-71.5515995" version="4" timestamp="2008-03-18T06:04:36Z" changeset="348809" uid="30854" user="Zambelli Limitada">
+    <tag k="name" v="Viña del Mar"/>
+    <tag k="is_in" v="Chile, Latin America"/>
+    <tag k="place" v="city"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+  </node>
+  <way id="23456524" version="1" timestamp="2008-03-26T02:18:52Z" changeset="397290" uid="30854" user="Zambelli Limitada">
+    <nd ref="254026575"/>
+    <nd ref="254026576"/>
+    <nd ref="254026577"/>
+    <tag k="name" v="2 Oriente"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="highway" v="residential"/>
+    <tag k="created_by" v="Potlatch 0.8"/>
+  </way>
+  <way id="23456524" version="2" timestamp="2008-03-26T02:19:09Z" changeset="397290" uid="30854" user="Zambelli Limitada">
+    <nd ref="254026580"/>
+    <nd ref="254026581"/>
+    <nd ref="254026575"/>
+    <nd ref="254026576"/>
+    <nd ref="254026577"/>
+    <tag k="name" v="2 Oriente"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="highway" v="residential"/>
+    <tag k="created_by" v="Potlatch 0.8"/>
+  </way>
+  <relation id="4296616" version="1" timestamp="2014-12-21T20:14:43Z" changeset="27617220" uid="695793" user="quadero">
+    <member type="way" ref="304321808" role="outer"/>
+    <member type="way" ref="304279235" role="outer"/>
+    <member type="way" ref="304279236" role="outer"/>
+    <tag k="name" v="Universidad de La Frontera"/>
+    <tag k="type" v="multipolygon"/>
+    <tag k="amenity" v="university"/>
+    <tag k="addr:city" v="Temuco"/>
+    <tag k="addr:street" v="Francisco Salazar"/>
+    <tag k="addr:housenumber" v="01145"/>
+  </relation>
+  <relation id="4296667" version="1" timestamp="2014-12-21T20:25:40Z" changeset="27617430" uid="695793" user="quadero">
+    <member type="way" ref="307633498" role="outer"/>
+    <member type="way" ref="307633497" role="outer"/>
+    <member type="way" ref="307633496" role="outer"/>
+    <tag k="type" v="multipolygon"/>
+    <tag k="amenity" v="parking"/>
+  </relation>
+</osm>

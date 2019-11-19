@@ -27,6 +27,7 @@
 
 using System;
 using System.Collections;
+using System.Configuration;
 using System.Text;
 using IBatisNet.Common.Exceptions;
 using IBatisNet.Common.Utilities;
@@ -302,7 +303,7 @@ namespace IBatisNet.DataMapper.Configuration.ParameterMapping
 				} 
 				else 
 				{
-					throw new ConfigurationException("Incorrect inline parameter map format: " + token);
+					throw new ConfigurationErrorsException("Incorrect inline parameter map format: " + token);
 				}
 			} 
 			else 
@@ -358,7 +359,7 @@ namespace IBatisNet.DataMapper.Configuration.ParameterMapping
 					} 
 					catch (Exception e) 
 					{
-						throw new ConfigurationException("Error. Could not set TypeHandler.  Cause: " + e.Message, e);
+						throw new ConfigurationErrorsException("Error. Could not set TypeHandler.  Cause: " + e.Message, e);
 					}
 				}
 			} 

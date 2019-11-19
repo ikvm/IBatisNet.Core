@@ -39,6 +39,7 @@ using IBatisNet.DataMapper.DataExchange;
 using IBatisNet.DataMapper.Exceptions;
 using IBatisNet.DataMapper.Scope;
 using IBatisNet.Common.Utilities;
+using System.Configuration;
 
 #endregion
 
@@ -277,7 +278,7 @@ namespace IBatisNet.DataMapper.Configuration.ResultMapping
                     string memberName = GroupByPropertyNames[i];
                     if (!_properties.Contains(memberName))
                     {
-                         throw new ConfigurationException(
+                         throw new ConfigurationErrorsException(
                              string.Format(
                                  "Could not configure ResultMap named \"{0}\". Check the groupBy attribute. Cause: there's no result property named \"{1}\".",
                                  _id, memberName));
@@ -286,7 +287,7 @@ namespace IBatisNet.DataMapper.Configuration.ResultMapping
             }
 			catch(Exception e)
 			{
-				throw new ConfigurationException(
+				throw new ConfigurationErrorsException(
 					string.Format("Could not configure ResultMap named \"{0}\", Cause: {1}", _id, e.Message)
 					, e);
 			}
@@ -378,7 +379,7 @@ namespace IBatisNet.DataMapper.Configuration.ResultMapping
 
 			if (configScope.NodeContext.SelectNodes(DomSqlMapBuilder.ApplyMappingNamespacePrefix(XML_SUBMAP), configScope.XmlNamespaceManager).Count>0 && this.Discriminator==null)
 			{
-				throw new ConfigurationException("The discriminator is null, but somehow a subMap was reached.  This is a bug.");
+				throw new ConfigurationErrorsException("The discriminator is null, but somehow a subMap was reached.  This is a bug.");
 			}
 			foreach ( XmlNode resultNode in configScope.NodeContext.SelectNodes(DomSqlMapBuilder.ApplyMappingNamespacePrefix(XML_SUBMAP), configScope.XmlNamespaceManager) )
 			{

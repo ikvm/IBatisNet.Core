@@ -1156,7 +1156,7 @@ namespace IBatisNet.DataMapper.Test.NUnit.SqlMapTests
             {
                 sqlMap.Update("DeleteAccount", new object());
             }
-            catch (IBatisNetException e)
+            catch (ProbeException e)
             {
                 Console.WriteLine("TestExecuteUpdateWithParameterClass :" + e.Message);
                 checkForInvalidTypeFailedAppropriately = true;

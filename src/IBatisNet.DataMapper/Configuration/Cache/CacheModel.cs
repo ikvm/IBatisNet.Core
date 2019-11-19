@@ -29,6 +29,7 @@
 using System;
 using System.Collections;
 using System.Collections.Specialized;
+using System.Configuration;
 using System.IO;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -214,7 +215,7 @@ namespace IBatisNet.DataMapper.Configuration.Cache
 			} 
 			catch (Exception e) 
 			{
-				throw new ConfigurationException("Error instantiating cache controller for cache named '"+_id+". Cause: " + e.Message, e);
+				throw new ConfigurationErrorsException("Error instantiating cache controller for cache named '"+_id+". Cause: " + e.Message, e);
 			}
 
 			//------------ configure Controller---------------------
@@ -224,7 +225,7 @@ namespace IBatisNet.DataMapper.Configuration.Cache
 			} 
 			catch (Exception e) 
 			{
-				throw new ConfigurationException ("Error configuring controller named '"+_id+"'. Cause: " + e.Message, e);
+				throw new ConfigurationErrorsException ("Error configuring controller named '"+_id+"'. Cause: " + e.Message, e);
 			}
 		}
 
@@ -305,7 +306,7 @@ namespace IBatisNet.DataMapper.Configuration.Cache
 					}
 					catch(Exception ex)
 					{
-						throw new IBatisNetException("Error caching serializable object.  Be sure you're not attempting to use " +
+						throw new ProbeException("Error caching serializable object.  Be sure you're not attempting to use " +
 							"a serialized cache for an object that may be taking advantage of lazy loading.  Cause: "+ex.Message, ex);
 					}
 				}
@@ -346,7 +347,7 @@ namespace IBatisNet.DataMapper.Configuration.Cache
 					}
 					catch(Exception ex)
 					{
-						throw new IBatisNetException("Error caching serializable object. Cause: "+ex.Message, ex);
+						throw new ProbeException("Error caching serializable object. Cause: "+ex.Message, ex);
 					}
 				}
 				_controller[key] = value;

@@ -26,6 +26,7 @@
 #region Using
 
 using System.Collections.Specialized;
+using System.Configuration;
 using System.Xml;
 using IBatisNet.Common.Exceptions;
 using IBatisNet.Common.Xml;
@@ -94,7 +95,7 @@ namespace IBatisNet.DataMapper.Configuration.Serializers
 			{
 				case @"pre": return IBatisNet.DataMapper.SelectKeyType.@pre;
 				case @"post": return IBatisNet.DataMapper.SelectKeyType.@post;
-				default: throw new ConfigurationException("Unknown selectKey type : '"+s+"'");
+				default: throw new ConfigurationErrorsException("Unknown selectKey type : '"+s+"'");
 			}
 		}
 	}

@@ -28,6 +28,7 @@
 
 using System;
 using System.Collections.Specialized;
+using System.Configuration;
 using System.IO;
 using System.Reflection;
 using System.Security.Permissions;
@@ -153,7 +154,7 @@ namespace IBatisNet.Common.Utilities
 			} 
 			catch(Exception e) 
 			{ 
-				throw new ConfigurationException( 
+				throw new ConfigurationErrorsException( 
 					string.Format("Unable to load config file \"{0}\". Cause : {1}", 
 					resourcePath, 
 					e.Message ) ,e); 
@@ -207,7 +208,7 @@ namespace IBatisNet.Common.Utilities
 				}
 				catch(Exception e) 
 				{ 
-					throw new ConfigurationException( 
+					throw new ConfigurationErrorsException( 
 						string.Format("iBATIS doesn't have the right to read the config file \"{0}\". Cause : {1}", 
 						filePath, 
 						e.Message ) ,e); 
@@ -287,7 +288,7 @@ namespace IBatisNet.Common.Utilities
 			}
 			catch(Exception e)
 			{
-				throw new ConfigurationException(
+				throw new ConfigurationErrorsException(
 					string.Format("Unable to load XmlDocument via stream. Cause : {0}", 
 					e.Message ) ,e); 
 			}
@@ -310,7 +311,7 @@ namespace IBatisNet.Common.Utilities
 			}
 			catch(Exception e)
 			{
-				throw new ConfigurationException(
+				throw new ConfigurationErrorsException(
 					string.Format("Unable to load XmlDocument via FileInfo. Cause : {0}", 
 					e.Message ) ,e); 
 			}
@@ -333,7 +334,7 @@ namespace IBatisNet.Common.Utilities
 			}
 			catch(Exception e)
 			{
-				throw new ConfigurationException(
+				throw new ConfigurationErrorsException(
 					string.Format("Unable to load XmlDocument via Uri. Cause : {0}", 
 					e.Message ) ,e); 
 			}
@@ -356,7 +357,7 @@ namespace IBatisNet.Common.Utilities
 			}
 			catch(Exception e)
 			{
-				throw new ConfigurationException(
+				throw new ConfigurationErrorsException(
 					string.Format("Unable to load file via resource \"{0}\" as resource. Cause : {1}", 
 					resource, 
 					e.Message ) ,e); 
@@ -381,7 +382,7 @@ namespace IBatisNet.Common.Utilities
 			}
 			catch(Exception e)
 			{
-				throw new ConfigurationException(
+				throw new ConfigurationErrorsException(
 					string.Format("Unable to load file via url \"{0}\" as url. Cause : {1}",
 					url, 
 					e.Message  ) ,e);
@@ -421,7 +422,7 @@ namespace IBatisNet.Common.Utilities
 					}
 					catch(Exception e)
 					{
-						throw new ConfigurationException(
+						throw new ConfigurationErrorsException(
 							string.Format("Unable to load file \"{0}\" in embedded resource. Cause : {1}",
 							resource, 
 							e.Message  ) ,e);
@@ -444,7 +445,7 @@ namespace IBatisNet.Common.Utilities
 						}
 						catch(Exception e)
 						{
-							throw new ConfigurationException(
+							throw new ConfigurationErrorsException(
 								string.Format("Unable to load file \"{0}\" in embedded resource. Cause : ",
 								resource, 
 								e.Message  ) ,e);
@@ -457,7 +458,7 @@ namespace IBatisNet.Common.Utilities
 			if (isLoad == false) 
 			{
 				_logger.Error("Could not load embedded resource from assembly");
-				throw new ConfigurationException(
+				throw new ConfigurationErrorsException(
 					string.Format("Unable to load embedded resource from assembly \"{0}\".",
 					fileInfo.OriginalFileName));
 			}
@@ -490,7 +491,7 @@ namespace IBatisNet.Common.Utilities
 			}
 			catch(Exception e)
 			{
-				throw new ConfigurationException(
+				throw new ConfigurationErrorsException(
 					string.Format("Unable to load file \"{0}\". Cause : \"{1}\"", resourcePath, e.Message),e);
 			}
 			return fileInfo;

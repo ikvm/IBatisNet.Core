@@ -26,6 +26,7 @@
 #region Using
 
 using System.Collections.Specialized;
+using System.Configuration;
 using System.Xml;
 using IBatisNet.Common.Exceptions;
 using IBatisNet.Common.Xml;
@@ -58,7 +59,7 @@ namespace IBatisNet.DataMapper.Configuration.Serializers
             }
             if (configScope.SqlIncludes.Contains(id))
             {
-                throw new ConfigurationException("Duplicate <sql>-include '" + id + "' found.");
+                throw new ConfigurationErrorsException("Duplicate <sql>-include '" + id + "' found.");
             }
             else
             {

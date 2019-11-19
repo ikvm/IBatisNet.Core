@@ -35,7 +35,7 @@ namespace IBatisNet.DataMapper.Exceptions
 	/// The DataMapperException is thrown when an error in the SqlMapper component occurs.
 	/// </summary>
 	[Serializable]
-	public class DataMapperException : IBatisNetException
+	public class DataMapperException : ProbeException
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="IBatisNet.DataMapper.Exceptions.DataMapperException"/> class.

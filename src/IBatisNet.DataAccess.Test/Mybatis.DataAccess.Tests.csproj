@@ -6,6 +6,7 @@
     <OutputType>Library</OutputType>
     <TargetFramework>netstandard2.0</TargetFramework>
     <SignAssembly>true</SignAssembly>
+    <NoWarn>0618</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

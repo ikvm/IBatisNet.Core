@@ -441,7 +441,7 @@ namespace IBatisNet.DataMapper
         /// <param name="parameterObject">The object used to set the parameters in the SQL</param>
         /// <param name="pageSize">The maximum number of objects to store in each page</param>
         /// <returns>A PaginatedList of beans containing the rows</returns>
-        [Obsolete("This method will be remove in future version.", false)]
+        //[Obsolete("This method will be remove in future version.", false)]
         PaginatedList QueryForPaginatedList(string statementName, object parameterObject, int pageSize);
 
         /// <summary>

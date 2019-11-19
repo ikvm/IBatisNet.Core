@@ -28,6 +28,7 @@
 #region Using
 
 using System;
+using System.Configuration;
 using System.Data;
 using System.Reflection;
 using System.Xml.Serialization;
@@ -482,7 +483,7 @@ namespace IBatisNet.Common
             }
             catch (Exception e)
             {
-                throw new ConfigurationException(
+                throw new ConfigurationErrorsException(
                     string.Format(
                         "Could not configure providers. Unable to load provider named \"{0}\" not found, failed. Cause: {1}",
                         _name, e.Message), e

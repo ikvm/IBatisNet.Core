@@ -28,6 +28,7 @@
 
 using System;
 using System.Collections;
+using System.Configuration;
 using System.IO;
 using System.Reflection;
 using System.Threading;
@@ -351,7 +352,7 @@ namespace IBatisNet.DataAccess.Configuration
 			}
 			catch(Exception ex)
 			{
-				throw new ConfigurationException( configurationScope.ErrorContext.ToString(), ex);
+				throw new ConfigurationErrorsException( configurationScope.ErrorContext.ToString(), ex);
 			}
 		}
 
@@ -411,7 +412,7 @@ namespace IBatisNet.DataAccess.Configuration
 						} 
 						else 
 						{
-							throw new ConfigurationException(
+							throw new ConfigurationErrorsException(
 								string.Format("Error while configuring the Provider named \"{0}\" There can be only one default Provider.",provider.Name));
 						}
 					}
@@ -562,7 +563,7 @@ namespace IBatisNet.DataAccess.Configuration
 				}
 				catch(Exception e)
 				{
-					throw new ConfigurationException(
+					throw new ConfigurationErrorsException(
 						string.Format("DaoManager could not configure DaoSessionHandler. DaoSessionHandler of type \"{0}\", failed. Cause: {1}", typeSessionHandler.Name, e.Message),e
 						);
 				}
@@ -688,7 +689,7 @@ namespace IBatisNet.DataAccess.Configuration
 				}
 				else
 				{
-					throw new ConfigurationException(
+					throw new ConfigurationErrorsException(
 						string.Format("Error while configuring the Provider named \"{0}\" in the Context named \"{1}\".",
                         providerName, configurationScope.NodeContext.Attributes["name"].Value));
 				}
@@ -701,7 +702,7 @@ namespace IBatisNet.DataAccess.Configuration
 				}
 				else
 				{
-					throw new ConfigurationException(
+					throw new ConfigurationErrorsException(
 						string.Format("Error while configuring the Context named \"{0}\". There is no default provider.",
 						configurationScope.NodeContext.Attributes["name"].Value));
 				}

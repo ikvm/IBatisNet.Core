@@ -27,6 +27,7 @@
 
 using System;
 using System.Collections.Specialized;
+using System.Configuration;
 using System.Xml;
 using IBatisNet.Common.Exceptions;
 using IBatisNet.Common.Utilities;
@@ -75,7 +76,7 @@ namespace IBatisNet.DataMapper.Configuration.Serializers
 			} 
 			else 
 			{
-				throw new ConfigurationException("The callBack type is not a valid implementation of ITypeHandler or ITypeHandlerCallback");
+				throw new ConfigurationErrorsException("The callBack type is not a valid implementation of ITypeHandler or ITypeHandlerCallback");
 			}
 
 			// 

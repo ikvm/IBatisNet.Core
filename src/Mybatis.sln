@@ -7,15 +7,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mybatis.Common", "IBatisNet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mybatis.DataMapper", "IBatisNet.DataMapper\Mybatis.DataMapper.csproj", "{F3E45F39-3224-4EAD-B138-EB5CC0E32824}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MybatisCommon.Tests", "IBatisNet.Common.Test\MybatisCommon.Tests.csproj", "{5961F3DE-CB5E-40FE-AE89-D00D6E453907}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MybatisCommon.Tests", "IBatisNet.Common.Test\MybatisCommon.Tests.csproj", "{5961F3DE-CB5E-40FE-AE89-D00D6E453907}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mybatis.DataAccess", "IBatisNet.DataAccess\Mybatis.DataAccess.csproj", "{BEFC4A45-7DF9-40E4-942C-82DC1BA5E708}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mybatis.DataAccess", "IBatisNet.DataAccess\Mybatis.DataAccess.csproj", "{BEFC4A45-7DF9-40E4-942C-82DC1BA5E708}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mybatis.DataAccess.Tests", "IBatisNet.DataAccess.Test\Mybatis.DataAccess.Tests.csproj", "{888FE332-F7B7-4248-AEE1-73E14EB9C042}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mybatis.DataAccess.Tests", "IBatisNet.DataAccess.Test\Mybatis.DataAccess.Tests.csproj", "{888FE332-F7B7-4248-AEE1-73E14EB9C042}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mybatis.DataMapper.Tests", "IBatisNet.DataMapper.Test\Mybatis.DataMapper.Tests.csproj", "{998B79D9-800F-493F-A263-306F06906E2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mybatis.DataMapper.Tests", "IBatisNet.DataMapper.Test\Mybatis.DataMapper.Tests.csproj", "{998B79D9-800F-493F-A263-306F06906E2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mybatis.DataAccess.Extensions", "IBatisNet.DataAccess.Extensions\Mybatis.DataAccess.Extensions.csproj", "{342C92B4-2742-4C55-9374-A504FE3B6972}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mybatis.DataAccess.Extensions", "IBatisNet.DataAccess.Extensions\Mybatis.DataAccess.Extensions.csproj", "{342C92B4-2742-4C55-9374-A504FE3B6972}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{67448A5F-FA5E-4A4E-AD1E-62193B4A1C67}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Insql", "..\insql\src\Insql\Insql.csproj", "{2B3B8186-4F85-44D2-88EF-734EFC74595C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,9 +55,18 @@ Global
 		{342C92B4-2742-4C55-9374-A504FE3B6972}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{342C92B4-2742-4C55-9374-A504FE3B6972}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{342C92B4-2742-4C55-9374-A504FE3B6972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B3B8186-4F85-44D2-88EF-734EFC74595C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B3B8186-4F85-44D2-88EF-734EFC74595C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B3B8186-4F85-44D2-88EF-734EFC74595C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B3B8186-4F85-44D2-88EF-734EFC74595C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5961F3DE-CB5E-40FE-AE89-D00D6E453907} = {67448A5F-FA5E-4A4E-AD1E-62193B4A1C67}
+		{888FE332-F7B7-4248-AEE1-73E14EB9C042} = {67448A5F-FA5E-4A4E-AD1E-62193B4A1C67}
+		{998B79D9-800F-493F-A263-306F06906E2F} = {67448A5F-FA5E-4A4E-AD1E-62193B4A1C67}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A1BAF217-AC9A-4F09-8DF2-FDFB9CE1007A}

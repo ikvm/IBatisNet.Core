@@ -38,6 +38,7 @@ using IBatisNet.DataAccess.Interfaces;
 
 using NHibernate.Cfg;
 using NHibernate;
+using System.Configuration;
 #endregion
 
 namespace IBatisNet.DataAccess.Extensions.DaoSessionHandlers
@@ -114,7 +115,7 @@ namespace IBatisNet.DataAccess.Extensions.DaoSessionHandlers
 			}
 			catch(Exception e)
 			{
-				throw new ConfigurationException(string.Format("DaoManager could not configure NHibernateDaoSessionHandler. Cause: {0}", e.Message), e);
+				throw new ConfigurationErrorsException(string.Format("DaoManager could not configure NHibernateDaoSessionHandler. Cause: {0}", e.Message), e);
 			}
 		}
 

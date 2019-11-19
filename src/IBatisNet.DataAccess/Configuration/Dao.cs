@@ -32,6 +32,7 @@ using IBatisNet.Common.Exceptions;
 using IBatisNet.Common.Utilities;
 using IBatisNet.DataAccess.Interfaces;
 using IBatisNet.DataAccess;
+using System.Configuration;
 #endregion
 
 namespace IBatisNet.DataAccess.Configuration
@@ -174,7 +175,7 @@ namespace IBatisNet.DataAccess.Configuration
 			}
 			catch(Exception e)
 			{
-				throw new ConfigurationException(string.Format("Error configuring DAO. Cause: {0}", e.Message), e);
+				throw new ConfigurationErrorsException(string.Format("Error configuring DAO. Cause: {0}", e.Message), e);
 			}
 		}
 

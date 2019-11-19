@@ -30,7 +30,7 @@ using System.Collections.Specialized;
 using System.Configuration;
 using System.Xml;
 using IBatisNet.Common.Logging.Impl;
-using ConfigurationException = IBatisNet.Common.Exceptions.ConfigurationException;
+//using ConfigurationException = IBatisNet.Common.Exceptions.ConfigurationException;
 
 namespace IBatisNet.Common.Logging
 {
@@ -109,8 +109,8 @@ namespace IBatisNet.Common.Logging
             
 			if ( factoryTypeString == string.Empty )
 			{
-				throw new ConfigurationException
-					( "Required Attribute '" 
+				throw new ConfigurationErrorsException
+          ( "Required Attribute '" 
 					+ LOGFACTORYADAPTER_ELEMENT_TYPE_ATTRIB 
 					+ "' not found in element '"
 					+ LOGFACTORYADAPTER_ELEMENT
@@ -140,8 +140,8 @@ namespace IBatisNet.Common.Logging
 			}
 			catch ( Exception e )
 			{
-				throw new ConfigurationException
-					( "Unable to create type '" + factoryTypeString + "'"
+				throw new ConfigurationErrorsException
+          ( "Unable to create type '" + factoryTypeString + "'"
 					  , e
 					);
 			}
@@ -160,8 +160,8 @@ namespace IBatisNet.Common.Logging
 
 				if ( keyAttrib == null )
 				{
-					throw new ConfigurationException
-						( "Required Attribute '" 
+					throw new ConfigurationErrorsException
+            ( "Required Attribute '" 
 						  + ARGUMENT_ELEMENT_KEY_ATTRIB 
 						  + "' not found in element '"
 						  + ARGUMENT_ELEMENT
@@ -202,7 +202,7 @@ namespace IBatisNet.Common.Logging
 			
 			if ( logFactoryElementsCount > 1 )
 			{
-				throw new ConfigurationException( "Only one <logFactoryAdapter> element allowed" );
+				throw new ConfigurationErrorsException( "Only one <logFactoryAdapter> element allowed" );
 			}
 			else if ( logFactoryElementsCount == 1 )
 			{

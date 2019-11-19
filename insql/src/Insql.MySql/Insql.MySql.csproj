@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <Version>2.1.0</Version>
+    <Authors>rainrcn@qq.com</Authors>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>secret.pfx</AssemblyOriginatorKeyFile>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/rainrcn/insql</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/rainrcn/insql</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Description>A lightweight .NET ORM framework, mysql database adapter.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Insql\Insql.csproj" />
+  </ItemGroup>
+
+</Project>

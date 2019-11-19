@@ -35,8 +35,7 @@ namespace IBatisNet.DataAccess.Exceptions
 	/// The DataAccessException is thrown when an error in the Dao occurs.
 	/// </summary>
 	[Serializable]
-	public class DataAccessException : IBatisNetException
-	{
+	public class DataAccessException : ProbeException {
 		/// <summary>
 		/// Initializes a new instance of the <see cref="IBatisNet.DataAccess.Exceptions.DataAccessException"/> class.
 		/// </summary>

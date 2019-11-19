@@ -28,6 +28,7 @@
 
 using System;
 using System.Collections;
+using System.Configuration;
 using System.Data;
 using System.Reflection;
 using System.Xml.Serialization;
@@ -311,7 +312,7 @@ namespace IBatisNet.DataMapper.Configuration.ParameterMapping
 				}
 				catch (Exception e) 
 				{
-					throw new ConfigurationException("Error occurred during custom type handler configuration.  Cause: " + e.Message, e);
+					throw new ConfigurationErrorsException("Error occurred during custom type handler configuration.  Cause: " + e.Message, e);
 				}
 			}
 			else

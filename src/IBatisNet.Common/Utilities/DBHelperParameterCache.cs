@@ -123,7 +123,7 @@ namespace IBatisNet.Common.Utilities
 			}
 			catch(Exception ex)
 			{
-				throw new IBatisNetException("Could not retrieve parameters for the store procedure named "+command.CommandText, ex);
+				throw new ProbeException("Could not retrieve parameters for the store procedure named "+command.CommandText, ex);
 			}
 		}
 

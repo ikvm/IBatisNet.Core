@@ -43,6 +43,7 @@ using IBatisNet.DataMapper.MappedStatements.PropertyStrategy;
 using IBatisNet.DataMapper.Scope;
 using IBatisNet.DataMapper.TypeHandlers;
 using IBatisNet.DataMapper.Proxy;
+using System.Configuration;
 
 #endregion
 
@@ -305,7 +306,7 @@ namespace IBatisNet.DataMapper.Configuration.ResultMapping
                 }
                 else
                 {
-                    throw new IBatisNetException(
+                    throw new ProbeException(
                         String.Format(CultureInfo.InvariantCulture,
                                       "Could not resolve member type for result property '{0}'. Neither nested result map nor typed setter was provided.",
                                       _propertyName));
@@ -469,7 +470,7 @@ namespace IBatisNet.DataMapper.Configuration.ResultMapping
 				}
 				catch (Exception e) 
 				{
-					throw new ConfigurationException("Error occurred during custom type handler configuration.  Cause: " + e.Message, e);
+					throw new ConfigurationErrorsException("Error occurred during custom type handler configuration.  Cause: " + e.Message, e);
 				}
 			}
 			else

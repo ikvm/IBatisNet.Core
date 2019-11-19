@@ -129,7 +129,7 @@ namespace IBatisNet.Common.Utilities
             }
             catch (System.Exception e)
             {
-                throw new IBatisNetException("Unable to execute the sql: " + fi.Name, e);
+                throw new ProbeException("Unable to execute the sql: " + fi.Name, e);
             }
             finally
             {

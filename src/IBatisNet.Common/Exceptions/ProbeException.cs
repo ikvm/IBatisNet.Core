@@ -33,7 +33,7 @@ namespace IBatisNet.Common.Exceptions
 	/// Summary description for ProbeException.
 	/// </summary>
     [Serializable]
-	public class ProbeException  : IBatisNetException
+	public class ProbeException  : Exception
 	{
 		/// <summary>
 		/// Initializes a new instance of the <b>ProbeException</b> class.

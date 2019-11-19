@@ -85,7 +85,7 @@ namespace IBatisNet.DataMapper.Configuration.Statements
 			base.Initialize( configurationScope );
 			if (this.ParameterMap == null)
 			{
-				//throw new ConfigurationException("The parameterMap attribute is required in the procedure tag named '"+ this.Id +"'.");
+				//throw new ConfigurationErrorsException("The parameterMap attribute is required in the procedure tag named '"+ this.Id +"'.");
                 this.ParameterMap = configurationScope.SqlMapper.GetParameterMap(ConfigurationScope.EMPTY_PARAMETER_MAP);
 			}
 		}
